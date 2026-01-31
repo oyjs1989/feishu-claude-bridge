@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Runtime data
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# Test files
+test-*.js
+generate_cat_image.js
+show_cat_image.js
+FEISHU_SDK_FIX_REPORT.md
+test-upload-init.md
+
+# Generated images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PM2
+.pm2/
