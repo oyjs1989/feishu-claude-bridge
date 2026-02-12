@@ -1,1 +1,37 @@
-{"name": "feishu-iflow-bridge", "version": "1.0.0", "description": "飞书 iFlow 桥接服务 - 通过飞书消息调用 iFlow CLI 执行任务", "main": "src/index.js", "scripts": {"start": "node src/index.js", "dev": "nodemon src/index.js", "test": "echo \"Error: no test specified\" && exit 1"}, "keywords": ["feishu", "iflow", "bridge", "websocket", "automation"], "author": "", "license": "MIT", "dependencies": {"@larksuiteoapi/node-sdk": "^1.35.0", "ws": "^8.16.0", "dotenv": "^16.3.1", "winston": "^3.11.0"}, "devDependencies": {"nodemon": "^3.0.3"}, "engines": {"node": ">=16.0.0"}}
+{
+  "name": "feishu-claude-bridge",
+  "version": "1.0.0",
+  "description": "飞书 Claude 桥接服务 - 通过飞书消息与 Claude CLI 进行对话",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "feishu",
+    "claude",
+    "ai",
+    "bridge",
+    "websocket",
+    "chatbot"
+  ],
+  "author": "oyjs1989",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:oyjs1989/feishu-claude-bridge.git"
+  },
+  "dependencies": {
+    "@larksuiteoapi/node-sdk": "^1.35.0",
+    "ws": "^8.16.0",
+    "dotenv": "^16.3.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

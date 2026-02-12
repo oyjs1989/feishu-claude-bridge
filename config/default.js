@@ -6,15 +6,10 @@ module.exports = {
     verificationToken: process.env.FEISHU_VERIFICATION_TOKEN,
     hubbleUrl: 'wss://open.feishu.cn/open-apis/hubble-im/v1'
   },
-  iflow: {
-    cliPath: process.env.IFLOW_CLI_PATH || 'iflow',
-    superpowersEnabled: process.env.SUPERPOWERS_ENABLED !== 'false',
-    superpowersMode: process.env.SUPERPOWERS_MODE || 'yolo'
+  claude: {
+    cliPath: process.env.CLAUDE_CLI_PATH || 'claude'
   },
   execution: {
-    yoloMode: process.env.YOLO_MODE !== 'false',
-    autoConfirm: process.env.AUTO_CONFIRM !== 'false',
-    maxLoopDepth: parseInt(process.env.MAX_LOOP_DEPTH || '100'),
     timeoutPerStep: parseInt(process.env.TIMEOUT_PER_STEP || '300')
   },
   progress: {

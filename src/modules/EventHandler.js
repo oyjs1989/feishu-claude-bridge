@@ -1,5 +1,5 @@
 const SessionManager = require('./SessionManager');
-const IFlowAdapter = require('./IFlowAdapter');
+const ClaudeAdapter = require('./ClaudeAdapter');
 const ResultAnalyzer = require('./ResultAnalyzer');
 const ProgressManager = require('./ProgressManager');
 const FeishuSender = require('./FeishuSender');
@@ -153,14 +153,14 @@ class EventHandler {
       this.processingSessions.add(sessionId);
       
       // 发送正在处理的消息
-      await FeishuSender.sendTextMessage(chatId, '🤖 正在处理您的请求，请稍候...');
+      await FeishuSender.sendTextMessage(chatId, '🤖 Claude 正在思考，请稍候...');
 
-      // 默认使用 Skill 模式: 将用户消息作为 skill 调用
-      const skillCommand = text.trim();
-      logger.info('准备调用 Skill', { sessionId, skillCommand });
+      // 将用户消息直接作为 prompt 发送给 Claude
+      const prompt = text.trim();
+      logger.info('准备调用 Claude', { sessionId, promptLength: prompt.length });
 
-      // 使用 IFlowAdapter 的 skill 执行方法（内部会调用 Skill 工具）
-      const result = await IFlowAdapter.executeSkill(skillCommand, sessionId);
+      // 使用 ClaudeAdapter 执行
+      const result = await ClaudeAdapter.executePrompt(prompt, sessionId);
       
       // 分析结果
       const analysis = ResultAnalyzer.analyze(result);
